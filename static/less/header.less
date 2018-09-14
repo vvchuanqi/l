@@ -1,0 +1,36 @@
+/* header */
+.header{
+  display: flex;
+  flex-flow: row;
+  height:50px;
+  align-items: center;
+  .header-left,.header-right{white-space: nowrap;overflow: hidden;padding:0 15px;}
+  .header-main{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    .tabs{
+      list-style: none;
+      margin:0;
+      padding:0;
+      display: flex;
+      flex-flow: row;align-items: center;
+      > li{        
+        white-space: nowrap;
+        overflow: hidden;
+        padding:10px 5px;
+        &.active{
+          position: relative;
+          color: @brand-primary;
+          &:after{
+            content:"";
+            position: absolute;
+            bottom:3px;left:5px;right:5px;
+            border-bottom:2px solid @brand-primary;
+          }
+        }
+      }
+    }
+  }
+}
+

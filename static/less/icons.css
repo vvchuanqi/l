@@ -1,0 +1,18 @@
+/* SVG 小图标 */
+i {
+  vertical-align: middle;
+}
+.icon-star,
+.icon-close {
+  display: inline-block;
+}
+.icon-star {
+  height: 24px;
+  width: 24px;
+  background: url(../images/icon_star.svg) center center / 100% 100% no-repeat;
+}
+.icon-close {
+  height: 24px;
+  width: 24px;
+  background: url(../images/icon_close.svg) center center / 100% 100% no-repeat;
+}

@@ -1,0 +1,323 @@
+/* LESS 2018-9-14 by vvchuanqi@163.com */
+/* LESS 全局抽象方法 */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+* {
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  font-family: -apple-system, system-ui, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial;
+  color: #515a6e;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+a {
+  background-color: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+/* 表单元素样式 */
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.1;
+  color: #515a6e;
+  background-image: none;
+  border: 1px solid #dcdee2;
+  border-radius: 4px;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  transition: all 0.15s;
+}
+.form-control::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: #f8f8f9;
+  opacity: 1;
+}
+.form-control[disabled],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+textarea.form-control {
+  height: auto;
+}
+/* 按钮样式 button */
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid #dcdee2;
+  white-space: nowrap;
+  transition: all 0.2s;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.1;
+  border-radius: 2px;
+  user-select: none;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  opacity: 0.65;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  outline: 0;
+  background-image: none;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+}
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+/* SVG 小图标 */
+i {
+  vertical-align: middle;
+}
+.icon-star,
+.icon-close {
+  display: inline-block;
+}
+.icon-star {
+  height: 24px;
+  width: 24px;
+  background: url(../images/icon_star.svg) center center / 100% 100% no-repeat;
+}
+.icon-close {
+  height: 24px;
+  width: 24px;
+  background: url(../images/icon_close.svg) center center / 100% 100% no-repeat;
+}
+/* header */
+.header {
+  display: flex;
+  flex-flow: row;
+  height: 50px;
+  align-items: center;
+}
+.header .header-left,
+.header .header-right {
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 15px;
+}
+.header .header-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.header .header-main .tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.header .header-main .tabs > li {
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10px 5px;
+}
+.header .header-main .tabs > li.active {
+  position: relative;
+  color: #2d8cf0;
+}
+.header .header-main .tabs > li.active:after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  right: 5px;
+  border-bottom: 2px solid #2d8cf0;
+}

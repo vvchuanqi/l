@@ -8,12 +8,9 @@
   line-height:1.1;
   color:@color-content;  
   background-image: none;
-  border: 1px solid @color-border;
-  .border-radius(2px);
-  .box-shadow();
-  transition:all 0.15s;
-  
-  
+  border: 1px solid @color-border; 
+  transition:all 0.15s;  
+  outline: none;
   &::-ms-expand {
     border: 0;
     background-color: transparent;
@@ -35,4 +32,9 @@
   textarea& {
     height: auto;
   }
+	&.input-lg{padding:12px 20px;font-size:16px;height:42px;}
+	&:focus{
+		border-color:@brand-primary;
+		.box-shadow-inset-outside();		
+	}
 }

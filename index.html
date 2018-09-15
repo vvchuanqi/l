@@ -9,37 +9,74 @@
 <script type="text/javascript" src="static/js/vue.min.js"></script>
 <script src="static/js/less.min.js" ></script>
 <style media="screen">
-  html,body{height:100%;}
-  #app{height:100%;}  
+html, body { height: 100%; }
+#app { height: 100%; display: flex; flex-flow: column; }
+#app .main { flex: 1; overflow: auto; min-height: 300px; }
+.logo { background: url(static/images/logo.png) top center no-repeat; margin: 15px auto 15px; height: 142px; }
+/* start 法规查询首页 */
+.page-index-fgcx { padding: 0 15px; }
+.page-index-fgcx .form-control { border-width: 2px; }
+	.page-index-fgcx ul{padding-left:1.3em;}
+	.page-index-fgcx ul li{line-height: 1.8;}
+	.page-index-fgcx ul li a{color:#808695;text-decoration: none;}
+	/* end 法规查询首页 */
 </style>
 </head>
 
 <body>
-<div id="app">
-<!-- start header -->
-<header class="header">
-  <aside class="header-left"><i class="icon-star"></i></aside>  
-  <main class="header-main">
-    <ul class="tabs">
-      <li class="active">法规查询</li>
-      <li>智能织法</li>
-    </ul>
-  </main>
-  <aside class="header-right"><i class="icon-close"></i></aside>
-</header>
-<!-- end header -->
-<!-- start main -->
-<div class="main">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="请输入关键字回车">
-  </div>  
+<div id="app"> 
+  <!-- start header -->
+  <header class="header">
+    <aside class="header-left"><i class="icon-star"></i></aside>
+    <main class="header-main">
+      <ul class="tabs">
+        <li class="active">法规查询</li>
+        <li>智能织法</li>
+      </ul>
+    </main>
+    <aside class="header-right"><i class="icon-close"></i></aside>
+  </header>
+  <!-- end header --> 
+  <!-- start main -->
+  <div class="main">
+    <h1 class="logo"></h1>
+    <div class="page-index-fgcx tab-panel active">
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder="请输入关键字回车">
+      </div>
+			<div class="title">
+				<span class="title-text"><strong>新法速递</strong></span>
+				<span class="text-action"><i class="icon-fresh"></i> 刷新</span>
+			</div>
+			<ul>
+				<li><a href="#">中华人民共和国电子商务法</a></li>
+				<li><a href="#">全国人民代表大会常务委员会关于全面加强生态环境建设的若干条预备意见</a></li>
+				<li><a href="#">中华人民共和国人民陪审员法</a></li>
+				<li><a href="#">中华人民共和国进出口商品检验法</a></li>
+				<li><a href="#">全国人民代表大会常务委员会关于设立上海金融示范区的意见</a></li>
+				<li><a href="#">中华人民共和国英雄烈士保护法</a></li>
+				<li><a href="#">中华人民共和国国家情报法</a></li>
+				<li><a href="#">浙江省人力资源和社会保障厅关于和谐劳动关系综合试验区实行特殊工时审批清单式改革试点的通知</a></li>
+				<li><a href="#">最高人民法院关于人民法院通过互联网公开审判流程信息的规定</a></li>
+				<li><a href="#">宁波市地理信息资源管理条例</a></li>
+			</ul>
+    </div>
+    <div class="page-index-znzf tab-panel">
+      <h2>请选择例句格式组织法律条文：</h2>
+    </div>
+  </div>
+  <!-- end main --> 
 </div>
-<!-- end main -->  
-</div>
-<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/jquery.js"></script> 
 <script type="text/javascript">
   $(function(){   
     //todo
+		$("#app .tabs > li").click(function(){
+			var _index = $(this).index();
+			$(this).addClass("active").siblings("li").removeClass("active");
+			$(".main .tab-panel").eq(_index).addClass("active").siblings(".tab-panel").removeClass("active");
+		});
+	});
 </script>
 </body>
 </html>

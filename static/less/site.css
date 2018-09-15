@@ -199,6 +199,10 @@ th {
   padding: 0;
 }
 /* 表单元素样式 */
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
 .form-control {
   display: block;
   width: 100%;
@@ -230,7 +234,7 @@ textarea.form-control {
   height: auto;
 }
 .form-control.input-lg {
-  padding: 12px 20px;
+  padding: 12px 15px;
   font-size: 16px;
   height: 42px;
 }
@@ -285,7 +289,8 @@ i {
 }
 .icon-star,
 .icon-close,
-.icon-fresh {
+.icon-fresh,
+.icon-search {
   display: inline-block;
 }
 .icon-star {
@@ -302,6 +307,11 @@ i {
   height: 16px;
   width: 16px;
   background: url(../images/icon_fresh.svg) center center / 100% 100% no-repeat;
+}
+.icon-search {
+  height: 24px;
+  width: 24px;
+  background: url(../images/icon_search.svg) center center / 100% 100% no-repeat;
 }
 /* title 适合放置一个标题右侧有其他操作的行 */
 .title {

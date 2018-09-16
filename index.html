@@ -10,16 +10,32 @@
 <script src="static/js/less.min.js" ></script>
 <style media="screen">
 html, body { height: 100%; }
-#app { height: 100%; display: flex; flex-flow: column; }
+#app { height:667px;width:375px;background-color:#FFF; display: flex; flex-flow: column;margin:20px auto;box-shadow:0 1px 10px rgba(0,0,0,.275);border-radius:4px;position: relative;z-index:5;}
+
+#fav{height:667px;width:300px;background-color:#FFF; display: flex; flex-flow: column;box-shadow:0 1px 10px rgba(0,0,0,.275);border-radius:4px;position: absolute;left:-304px;top:0;transition: all 0.15s;transform: scaleX(0);transform-origin: right top; z-index:-1;}
+#fav.open{opacity: 1;transform:scaleX(1);z-index:1;}
 #app .main { flex: 1; overflow: auto; min-height: 300px; }
-.logo { background: url(static/images/logo.png) top center no-repeat; margin: 15px auto 15px; height: 142px; }
-/* start 法规查询首页 */
-.page-index-fgcx { padding: 0 15px; }
-.page-index-fgcx .form-control { border-width: 2px; }
+	#app > .header .icon-star,#app > .header .icon-close{opacity:.7;cursor: pointer;}
+	#app > .header .icon-star:hover,#app > .header .icon-close:hover{opacity:1;}
+	#app > .header .icon-star:active,#app > .header .icon-close:active{opacity:.7;}
+	.logo { background: url(static/images/logo.png) top center no-repeat; margin: 15px auto 15px; height: 142px;transition:height 0.15s;}
+	.logo.small{height:83px;}
+	/* start 法规查询首页 */
+	.page-index-fgcx,.page-index-znzf { padding: 0 15px; }
+	.page-index-fgcx .form-group .icon-search{position:absolute;right:10px;top:50%;margin-top:-12px;}
+	.page-index-fgcx .form-control { border-width: 2px;padding-right:40px; }
 	.page-index-fgcx ul{padding-left:1.3em;}
 	.page-index-fgcx ul li{line-height: 1.8;}
 	.page-index-fgcx ul li a{color:#808695;text-decoration: none;}
 	/* end 法规查询首页 */
+	
+	/* start 收藏夹 */
+	#fav > .header{display: flex;flex-flow: row;height:50px;}
+	#fav > .header > h1{flex: 1;justify-content: flex-start;font-size:20px;font-weight: 800;color:#50cbff;margin:0;padding-left:15px;}
+	#fav > .header .close{opacity:.7;cursor: pointer;padding-right:15px;}
+	#fav > .header .close:hover,#app > .header .close:hover{opacity:1;}
+	#fav > .header .close:active{opacity:.7;}
+	/* end 收藏夹 */
 </style>
 </head>
 
@@ -39,10 +55,11 @@ html, body { height: 100%; }
   <!-- end header --> 
   <!-- start main -->
   <div class="main">
-    <h1 class="logo"></h1>
+    <h1 class="logo small"></h1>
     <div class="page-index-fgcx tab-panel active">
       <div class="form-group">
         <input type="text" class="form-control input-lg" placeholder="请输入关键字回车">
+				<i class="icon-search"></i>
       </div>
 			<div class="title">
 				<span class="title-text"><strong>新法速递</strong></span>
@@ -66,15 +83,26 @@ html, body { height: 100%; }
     </div>
   </div>
   <!-- end main --> 
+	<div id="fav">
+		<header class="header">
+			<h1>收藏夹</h1>
+			<span class="close">关闭</span>
+		</header>
+	</div>
 </div>
+
 <script type="text/javascript" src="static/js/jquery.js"></script> 
 <script type="text/javascript">
   $(function(){   
-    //todo
+    //tabs
 		$("#app .tabs > li").click(function(){
 			var _index = $(this).index();
 			$(this).addClass("active").siblings("li").removeClass("active");
 			$(".main .tab-panel").eq(_index).addClass("active").siblings(".tab-panel").removeClass("active");
+		});
+		//toggle fav panel
+		$("#app > .header .icon-star,#fav > .header .close").click(function(){
+			$("#fav").toggleClass("open");
 		});
 	});
 </script>

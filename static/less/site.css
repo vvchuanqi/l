@@ -341,6 +341,7 @@ i {
   white-space: nowrap;
   overflow: hidden;
   padding: 10px 5px;
+  cursor: pointer;
 }
 .tabs > li:after {
   content: "";

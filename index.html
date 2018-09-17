@@ -8,39 +8,43 @@
 <link rel="stylesheet/less" type="text/css" href="static/less/site.less" />
 <script type="text/javascript" src="static/js/vue.min.js"></script>
 <script src="static/js/less.min.js" ></script>
-<style media="screen">
+<style media="screen" type="text/css">
 html, body { height: 100%; }
 #app { height:667px;width:375px;background-color:#FFF; display: flex; flex-flow: column;margin:20px auto;box-shadow:0 1px 10px rgba(0,0,0,.275);border-radius:4px;position: relative;z-index:5;}
 
-#fav{height:667px;width:300px;background-color:#FFF; display: flex; flex-flow: column;box-shadow:0 1px 10px rgba(0,0,0,.275);border-radius:4px;position: absolute;left:-304px;top:0;transition: all 0.15s;transform: scaleX(0);transform-origin: right top; z-index:-1;}
-#fav.open{opacity: 1;transform:scaleX(1);z-index:1;}
 #app .main { flex: 1; overflow: auto; min-height: 300px; }
 	#app > .header .icon-star,#app > .header .icon-close{opacity:.7;cursor: pointer;}
 	#app > .header .icon-star:hover,#app > .header .icon-close:hover{opacity:1;}
 	#app > .header .icon-star:active,#app > .header .icon-close:active{opacity:.7;}
 	.logo { background: url(static/images/logo.png) top center no-repeat; margin: 15px auto 15px; height: 142px;transition:height 0.15s;}
 	.logo.small{height:83px;}
+  .search{position: relative;}
+  .search .form-control{padding-right:40px;}
+  .search .icon-search{position:absolute;right:10px;top:50%;margin-top:-12px;}
 	/* start 法规查询首页 */
 	.page-index-fgcx,.page-index-znzf { padding: 0 15px; }
-	.page-index-fgcx .form-group .icon-search{position:absolute;right:10px;top:50%;margin-top:-12px;}
-	.page-index-fgcx .form-control { border-width: 2px;padding-right:40px; }
+	.page-index-fgcx .search .form-control { border-width: 2px; }
 	.page-index-fgcx ul{padding-left:1.3em;}
 	.page-index-fgcx ul li{line-height: 1.8;}
 	.page-index-fgcx ul li a{color:#808695;text-decoration: none;}
 	/* end 法规查询首页 */
-	
+
 	/* start 收藏夹 */
+  #fav{height:667px;width:330px;position: absolute;left:-334px;top:0;background-color:#FFF; display: flex; flex-flow: column;box-shadow:0 1px 10px rgba(0,0,0,.275);border-radius:4px;transition: all 0.15s;transform: scaleX(0);transform-origin: right top; z-index:-1;}
+  #fav.open{opacity: 1;transform:scaleX(1);z-index:1;}
 	#fav > .header{display: flex;flex-flow: row;height:50px;}
 	#fav > .header > h1{flex: 1;justify-content: flex-start;font-size:20px;font-weight: 800;color:#50cbff;margin:0;padding-left:15px;}
 	#fav > .header .close{opacity:.7;cursor: pointer;padding-right:15px;}
 	#fav > .header .close:hover,#app > .header .close:hover{opacity:1;}
 	#fav > .header .close:active{opacity:.7;}
+  #fav > .main{}
+  #fav .search{margin:0 15px 15px;}
 	/* end 收藏夹 */
 </style>
 </head>
 
 <body>
-<div id="app"> 
+<div id="app">
   <!-- start header -->
   <header class="header">
     <aside class="header-left"><i class="icon-star"></i></aside>
@@ -52,12 +56,12 @@ html, body { height: 100%; }
     </main>
     <aside class="header-right"><i class="icon-close"></i></aside>
   </header>
-  <!-- end header --> 
+  <!-- end header -->
   <!-- start main -->
   <div class="main">
     <h1 class="logo small"></h1>
     <div class="page-index-fgcx tab-panel active">
-      <div class="form-group">
+      <div class="form-group search">
         <input type="text" class="form-control input-lg" placeholder="请输入关键字回车">
 				<i class="icon-search"></i>
       </div>
@@ -82,18 +86,75 @@ html, body { height: 100%; }
       <h2>请选择例句格式组织法律条文：</h2>
     </div>
   </div>
-  <!-- end main --> 
+  <!-- end main -->
 	<div id="fav">
 		<header class="header">
 			<h1>收藏夹</h1>
 			<span class="close">关闭</span>
 		</header>
+    <div class="search">
+        <input type="text" class="form-control">
+        <i class="icon-search"></i>
+      </div>
+    <main class="main">
+      
+      <ul class="list">
+        <li class="list-item">
+          <div class="list-item__bd">
+            <h2>中华人民共和国电子商务法</h2>
+            <p>09月17日·文档</p>
+          </div>
+          <div class="list-item__ft"><i class="icon-star"></i></div>
+        </li>
+        <li class="list-item">
+          <div class="list-item__bd">
+            <h2>最高人民法院、最高人民检察院、公安部关于办理醉酒驾驶机动车刑事案件适用法律若干问题的意见</h2>
+            <p>09月11日·文档</p>
+          </div>
+          <div class="list-item__ft"><i class="icon-star"></i></div>
+        </li>
+        <li class="list-item">
+          <div class="list-item__bd">
+            <h2>改善公共交通服务，优化城市交通结构为社会公众提供安全、便捷、舒适、经济的个性化出行服务。</h2>
+            <p>09月10日·文档</p>
+          </div>
+          <div class="list-item__ft"><i class="icon-star"></i></div>
+        </li>
+        <li class="list-item">
+          <div class="list-item__bd">
+            <h2>中华人民共和国电子商务法</h2>
+            <p>09月09日·文档</p>
+          </div>
+          <div class="list-item__ft"><i class="icon-star"></i></div>
+        </li>
+        <li class="list-item">
+          <div class="list-item__hd">
+            <img src="" alt="封面图" style="width:60px;height:60px;display: block;background-color: #eee;">
+          </div>
+          <div class="list-item__bd">
+            <h2>关于酒驾法规的截图(一)</h2>
+            <p>09月08日·截图</p>
+          </div>
+          <div class="list-item__ft"><i class="icon-star"></i></div>
+        </li>
+        <li class="list-item">
+          <div class="list-item__hd">
+            <img src="" alt="封面图" style="width:60px;height:60px;display: block;background-color: #eee;">
+          </div>
+          <div class="list-item__bd">
+            <h2>关于酒驾法规的截图(二)</h2>
+            <p>09月08日·截图</p>
+          </div>
+          <div class="list-item__ft"><i class="icon-star"></i></div>
+        </li>
+      </ul>
+    </main>
 	</div>
 </div>
 
-<script type="text/javascript" src="static/js/jquery.js"></script> 
+<script type="text/javascript" src="static/js/jquery.js"></script>
 <script type="text/javascript">
-  $(function(){   
+  $(function(){
     //tabs
 		$("#app .tabs > li").click(function(){
 			var _index = $(this).index();

@@ -24,7 +24,8 @@ h5,
 h6,
 ul,
 ol,
-dl {
+dl,
+p {
   margin: 0;
   font-size: inherit;
 }
@@ -365,6 +366,48 @@ i {
 }
 .tab-panel.active {
   display: block;
+}
+/* list 分为左中右结构列表和上下结构列表 */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.list:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: "";
+  border-top: 1px solid #dcdee2;
+  transform: scaleY(0.5);
+}
+.list .list-item {
+  display: flex;
+  flex-flow: nowrap row;
+  position: relative;
+  padding: 10px 0;
+}
+.list .list-item:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid #dcdee2;
+  transform: scaleY(0.5);
+}
+.list .list-item .list-item__bd {
+  flex: 1;
+}
+.list .list-item .list-item__bd h2 {
+  color: #17233d;
+  font-size: 16px;
+  margin: 0 0 3px;
+}
+.list .list-item .list-item__bd p {
+  color: #808695;
 }
 /* header */
 .header {

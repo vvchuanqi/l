@@ -1,0 +1,16 @@
+/* list 分为左中右结构列表和上下结构列表 */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list .list-item {
+  display: flex;
+  flex-flow: nowrap row;
+}
+.list .list-item .list-item__bd {
+  flex: 1;
+}
+.list .list-item .list-item__bd h2 {
+  color: ;
+}

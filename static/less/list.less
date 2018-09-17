@@ -1,0 +1,29 @@
+/* list 分为左中右结构列表和上下结构列表 */
+.list{
+  list-style: none;
+  margin:0;
+  padding:0;
+  position: relative;
+  &:before{.topline();}
+  .list-item{
+    display: flex;
+    flex-flow: nowrap row;
+    position: relative;
+    padding:10px 15px;
+    &:after{
+      .bottomline();
+      left:15px;
+    }
+    &:last-child:after{
+      left:0;
+    }
+    .list-item__hd{margin-right:15px;}
+    .list-item__bd{
+      flex:1;
+      h2{color:@color-title;font-size:16px;margin:0 0 3px;}
+      p{color:@color-sub;}
+    }
+    .list-item__ft{margin-left:10px;}
+  }
+}
+
